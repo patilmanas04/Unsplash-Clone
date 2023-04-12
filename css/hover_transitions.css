@@ -1,0 +1,27 @@
+.header-section .search-box{
+    transition: border 0.1s ease;
+}
+.header-section .search-box:hover{
+    border: 1px solid #d1d1d1;
+}
+
+.header-section .top-header-section .right .header-hover-transition{
+    transition: color 0.1s ease;
+}
+.header-section .top-header-section .right .header-hover-transition:hover{
+    color: #111;
+}
+
+.header-section .top-header-section .mid .header-hover-transition{
+    transition: color 0.1s ease;
+}
+.header-section .top-header-section .mid .header-hover-transition:hover{
+    color: #111;
+}
+
+.header-section .categories .header-hover-transition{
+    transition: color 0.1s ease;
+}
+.header-section .categories .header-hover-transition:hover{
+    color: #111;
+}
