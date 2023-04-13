@@ -25,3 +25,10 @@
 .header-section .categories .header-hover-transition:hover{
     color: #111;
 }
+
+main .image-popup-window .download-button{
+    transition: background 0.1s ease;
+}
+main .image-popup-window .download-button:hover{
+    background: #37a866;;
+}
