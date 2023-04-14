@@ -17,11 +17,13 @@ function addImageToDOM(response){
     imageContainer.style.backgroundImage = `url(${response.urls.full})`;
 }
 
+// Defaults
+let introductionContainerSettingDefaults = document.querySelector(".other-categories");
+introductionContainerSettingDefaults.style.display = "none";
 
 
 
-
-// Adding the images to the gallery dynamically
+// Adding the images to the gallery dynamically in the editorial gallery
 let url2 = "https://api.unsplash.com/photos/random?client_id=HB6DnSO4g5aZ4oHbaFwFK5IZUareL-qF5kuq8VuGwZk&count=30";
 
 let galleryImageAJAXCall = new XMLHttpRequest();
@@ -33,15 +35,142 @@ galleryImageAJAXCall.addEventListener("load", function(e){
     appendImageToGallery(response);
 });
 
+
+let imagePopupWindow = document.querySelector(".image-popup-window");
+let fadedBackground = document.querySelector(".faded-background");
+let previewImage = document.querySelector(".preview-image");
+let closeImagePopupWindowButton = document.querySelector(".close-button");
+let downloadButton = document.querySelector(".download-button");
+let nextButton = document.querySelector(".image-popup-window .control-next");
+let previousButton = document.querySelector(".image-popup-window .control-previous");
+let index = 0;
+let allImages = "";
+
 function appendImageToGallery(response){
-    console.log(response);
-    response.forEach(function(e){
+    allImages = response;
+    response.forEach(function(e, currentIndex){
         let imageUrl = e.urls.regular;
-        console.log(imageUrl);
         let gallery = document.querySelector(".gallery");
         let imageContainer = document.createElement('img');
         imageContainer.src = imageUrl;
         imageContainer.className = "gallery-image";
         gallery.appendChild(imageContainer);
+
+        imageContainer.addEventListener("click", function(){
+            imagePopupWindow.style.display = "block";
+            fadedBackground.style.display = "block";
+            previewImage.src = imageUrl;
+            downloadButton.href = e.links.html;
+            index = currentIndex;
+        });
+        
+        closeImagePopupWindowButton.addEventListener("click", function(){
+            imagePopupWindow.style.display = "none";
+            fadedBackground.style.display = "none";
+            previewImage.src = "";
+            downloadButton.href = "";
+            index = "";
+        });
     });
 }
+
+nextButton.addEventListener("click", function(){
+    if(index < allImages.length - 1){
+        previewImage.src = allImages[index + 1].urls.regular;
+        downloadButton.href = allImages[index + 1].links.html;
+        index++;
+    }
+});
+
+previousButton.addEventListener("click", function(){
+    if(index > 0){
+        previewImage.src = allImages[index - 1].urls.regular;
+        downloadButton.href = allImages[index - 1].links.html;
+        index--;
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+let categoriesTabs = document.querySelectorAll(".category");
+console.log(categoriesTabs);
+
+categoriesTabs.forEach(function(e){
+    e.addEventListener("click", function(e){
+        let galleryOfImages = document.querySelector(".gallery");
+        galleryOfImages.innerHTML = "";
+        let search = e.target.innerText;
+        let api_search_url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA`;
+        console.log(api_search_url);
+
+        let newGalleryImageAJAXCall = new XMLHttpRequest();
+        newGalleryImageAJAXCall.open('GET', api_search_url);
+        newGalleryImageAJAXCall.send();
+
+        newGalleryImageAJAXCall.addEventListener("load", function(e){
+            let api_response = JSON.parse(e.target.response);
+            console.log(api_response);
+            appendImageToGallery(api_response.results);
+        });
+
+        // manipulating the content on the starting container
+        let introductionContainer = document.querySelector(".other-categories");
+        let imageContainer = document.querySelector(".container .editorial-title-details");
+        let containerTitle = document.querySelector(".other-categories .title");
+        let containerContent = document.querySelector(".other-categories .content");
+        if(search === "Editorial"){
+            imageContainer.style.display = "flex";
+            introductionContainer.style.display = "none";
+        }
+        else{
+            imageContainer.style.display = "none";
+            introductionContainer.style.display = "flex";
+            console.log("else part");
+        }
+
+        let categoriesDefinations = {
+            "Wallpapers" : "Transform your desktop or mobile screen with our stunning collection of high-quality wallpapers, handpicked to inspire and delight.",
+            "3D Renders" : "Step into the future with our collection of mesmerizing 3D renders, showcasing a breathtaking array of scenes and objects that blur the line between reality and imagination.",
+            "Nature" : "Immerse yourself in the wonders of the natural world with our stunning collection of nature photography, capturing the awe-inspiring beauty of landscapes, wildlife, and more",
+            "Travel" : "Explore the world from the comfort of your screen with our breathtaking collection of travel photography, showcasing the diverse cultures, landscapes, and experiences that make our planet so rich and fascinating.",
+            "Architecture & Interiors" : "Get inspired by the world's most stunning buildings and interiors with our curated collection of architectural and interior design photography, showcasing the incredible creativity and craftsmanship of human design.",
+            "Street Photography" : "Experience the vibrant energy and diversity of urban life with our captivating collection of street photography, featuring candid moments and glimpses of humanity from the world's bustling cities.",
+            "Textures & Patterns" : "Add depth and richness to your creative projects with our collection of intricate textures and mesmerizing patterns, offering endless inspiration for designers, artists, and enthusiasts alike.",
+            "Film" : "Step into the world of cinema with our curated collection of film stills and behind-the-scenes photography, offering a glimpse into the magic of storytelling and the art of filmmaking.",
+            "Experimental" : "Push the boundaries of creativity with our collection of experimental photography, showcasing innovative techniques and unconventional approaches that challenge our perception of art and beauty.",
+            "Animals" : "Discover the stunning diversity and wonder of the animal kingdom with our collection of captivating animal photography, showcasing the beauty, grace, and wildness of creatures from around the world.",
+            "Fashion & Beauty" : "Step into the glamorous world of fashion and beauty with our collection of stunning photography, featuring the latest trends and styles, and celebrating the art of self-expression and individuality.",
+            "Business & Work" : "Explore the dynamic world of business and work with our collection of professional photography, showcasing the energy, diversity, and innovation of modern workplaces and industries.",
+            "Food & Drink" : "Indulge your senses with our collection of mouth-watering food and drink photography, showcasing the art and science of culinary creation, and celebrating the rich culture and traditions behind our favorite dishes and beverages.",
+            "People" : "Experience the power and emotion of human connection with our collection of captivating people photography, featuring moments of joy, love, struggle, and triumph from around the world.",
+            "Spirituality" : "Explore the mysteries and wonders of spirituality with our collection of inspiring photography, showcasing the beauty, diversity, and profound meaning of religious and spiritual traditions around the world.",
+            "Athletics" : "Get inspired and energized by our collection of dynamic athletics photography, capturing the strength, speed, and grace of athletes in motion across a wide range of sports and activities.",
+            "Health & Wellness" : "Discover the power of mind, body, and spirit with our collection of health and wellness photography, capturing the beauty and vitality of healthy living, fitness, and wellness practices from around the world.",
+            "Current Events" : "Stay up-to-date with the latest news and events from around the world through our curated collection of powerful and compelling photography capturing the most significant and newsworthy events of our time.",
+            "Arts & Culture" : "Experience the vibrancy and diversity of human expression through our captivating collection of photography showcasing the beauty and complexity of art, culture, and tradition from around the world."
+        }
+        containerTitle.innerHTML = search;
+        containerContent.innerHTML = categoriesDefinations[search];
+
+        // adding background image to the starting container
+        let introductionContainerBgImageUrl = `https://api.unsplash.com/photos/random?orientation=landscape&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA&query=${search}`;
+        
+        let introductionContainerBgImageAJAXCall = new XMLHttpRequest();
+        introductionContainerBgImageAJAXCall.open('GET', introductionContainerBgImageUrl);
+        introductionContainerBgImageAJAXCall.send();
+
+        introductionContainerBgImageAJAXCall.addEventListener("load", function(e){
+            let apiResponse = JSON.parse(e.target.response);
+            introductionContainer.style.backgroundImage = `url(${apiResponse.urls.full})`;
+        });
+    });
+});

@@ -124,7 +124,7 @@ a{
 }
 
 .vertical-line{
-    width: 1px;
+    width: 2px;
     height: 32px;
     align-self: center;
     background-color: #d1d1d1;
@@ -294,6 +294,60 @@ main .container .editorial-title-details .containing-div .search-box input{
 
 
 
+/* Other catergories starting image styles */
+main .container .other-categories{
+    width: 100%;
+    height: 550px;
+    margin-top: 119px;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+}
+
+main .other-categories .blur-background{
+    background: #00000061;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+main .container .other-categories .containing-div{
+    /* background-color: blue; */
+    height: fit-content;
+    width: 66%;
+    margin-left: 45px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    position: relative;
+    z-index: 2;
+}
+
+main .container .other-categories .containing-div .title{
+    font-size: 46px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+main .container .other-categories .containing-div .content{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 16px;
+    line-height: 1.6;
+}
+
+
+
 
 /* Gallery Styles */
 main .gallery{
@@ -311,6 +365,7 @@ main .gallery .gallery-image{
     background: #f9f9f9;
     margin-bottom: 21px;
     box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+    cursor: pointer;
 }
 
 
@@ -345,7 +400,7 @@ main .image-popup-window{
     display: none;
 }
 
-main .blur-background{
+main .faded-background{
     background: #00000061;
     position: fixed;
     top: 0px;
@@ -383,12 +438,19 @@ main .image-popup-window .preview-image{
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 main .image-popup-window .image-nav-control{
     position: absolute;
     z-index: 30;
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 main .image-popup-window .control-previous img{
@@ -402,6 +464,7 @@ main .image-popup-window .control-next img{
 main .image-popup-window .control-previous{
     left: 15px;
 }
+
 
 main .image-popup-window .control-next{
     right: 15px;

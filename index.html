@@ -58,7 +58,7 @@
 
         <div class="categories">
             <div class="left category header-hover-transition js-on-click-effect">
-                <a href="#">Editorial</a>
+                Editorial
             </div>
 
             <div class="vertical-line"></div>
@@ -68,62 +68,62 @@
                     <img src="images/angle-small-left.png" alt="">
                 </div>
 
-                <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Wallpapers</a>
+                <div class="category header-hover-transition js-on-click-effect" id="Wallpapers">
+                    Wallpapers
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">3D Renders</a>
+                    3D Renders
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Nature</a>
+                    Nature
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Travel</a>
+                    Travel
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Architecture & Interiors</a>
+                    Architecture & Interiors
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Street Photography</a>
+                    Street Photography
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Textures & Patterns</a>
+                    Textures & Patterns
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Film</a>
+                    Film
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Experimental</a>
+                    Experimental
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Animals</a>
+                    Animals
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Fashion & Beauty</a>
+                    Fashion & Beauty
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Business & Work</a>
+                    Business & Work
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Food & Drink</a>
+                    Food & Drink
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">People</a>
+                    People
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Spirituality</a>
+                    Spirituality
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Athletics</a>
+                    Athletics
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Health & Wellness</a>
+                    Health & Wellness
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Current Events</a>
+                    Current Events
                 </div>
                 <div class="category header-hover-transition js-on-click-effect">
-                    <a href="#">Arts & Culture</a>
+                    Arts & Culture
                 </div>
 
                 <div class="angle-small-right">
@@ -135,6 +135,7 @@
 
     <main>
         <section class="container">
+            <!-- only for the editorial category -->
             <div class="editorial-title-details">
                 <div class="blur-background"></div>
                 <div class="containing-div">
@@ -153,20 +154,37 @@
                     </div>
                 </div>
             </div>
+
+            <!-- for other categories -->
+            <div class="other-categories">
+                <div class="blur-background"></div>
+                <div class="containing-div">
+                    <div class="details">
+                        <div class="title">
+                            Wallpapers
+                        </div>
+                        <div class="content">
+                            <p>Transform your desktop or mobile screen with our stunning collection of high-quality wallpapers, handpicked to inspire and delight.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="gallery">
             <!-- Images will be dynamically added here -->
         </section>
 
-        <div class="blur-background"></div>
+        <div class="faded-background"></div>
         <section class="image-popup-window">
             <!-- Image Popup Window which will appear when you will click on an image -->
-            <img src="images/cancel.png" alt="close button" class="close-button">
+            <div class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 96 960 960" width="19"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+            </div>
 
-            <a href="#" class="download-button">Download</a>
+            <a href="" class="download-button" target="_blank">Download</a>
 
-            <img src="https://images.unsplash.com/photo-1661956601349-f61c959a8fd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="preview image" class="preview-image">
+            <img src="" alt="preview image" class="preview-image">
 
             <div class="image-nav-control control-previous">
                 <img src="images/control-previous.png" alt="control previous">
