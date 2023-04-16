@@ -36,12 +36,15 @@ angleSmallRight.addEventListener("click", function (){
 
 // search box border effect
 let searchBox = document.querySelector(".header-section .top-header-section .left .search-box");
-searchBox.addEventListener("click", function (){
+let searchBoxInput = document.querySelector(".header-section .top-header-section .left .search-box .search-input");
+
+searchBoxInput.addEventListener("focus", function (){
     searchBox.style.border = "1px solid #d1d1d1";
 });
 
-
-
+searchBoxInput.addEventListener("blur", function (){
+    searchBox.style.border = "1px solid transparent";
+});
 
 
 // categories on click color and border bottom effects
@@ -51,6 +54,9 @@ categoriesItems[0].style.color = "#111";
 
 categoriesItems.forEach(function (item){
     item.addEventListener("click", function(){
+        imageSearchBoxs.forEach(function(imageSearchBox){
+            imageSearchBox.value = "";
+        });
         categoriesItems.forEach(function (item){
             item.style.borderBottom = "2px solid transparent";
             item.style.color = "defualt";
@@ -61,3 +67,13 @@ categoriesItems.forEach(function (item){
         item.style.color = "#111";
     });
 })
+
+
+
+let logo = document.querySelector(".header-section .top-header-section .left .branding");
+logo.addEventListener("click", function (){
+    location.reload();
+    imageSearchBoxs.forEach(function(imageSearchBox){
+        imageSearchBox.value = "";
+    });
+});

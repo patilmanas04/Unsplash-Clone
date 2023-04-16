@@ -106,10 +106,12 @@ console.log(categoriesTabs);
 
 categoriesTabs.forEach(function(e){
     e.addEventListener("click", function(e){
+        displaySearchTermBox.style.display = "none";
         let galleryOfImages = document.querySelector(".gallery");
         galleryOfImages.innerHTML = "";
         let search = e.target.innerText;
-        let api_search_url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA`;
+        // let api_search_url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA`;
+        let api_search_url = `https://api.unsplash.com/photos/random?query=${search}&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA&count=30`;
         console.log(api_search_url);
 
         let newGalleryImageAJAXCall = new XMLHttpRequest();
@@ -119,7 +121,7 @@ categoriesTabs.forEach(function(e){
         newGalleryImageAJAXCall.addEventListener("load", function(e){
             let api_response = JSON.parse(e.target.response);
             console.log(api_response);
-            appendImageToGallery(api_response.results);
+            appendImageToGallery(api_response);
         });
 
         // manipulating the content on the starting container
@@ -174,3 +176,29 @@ categoriesTabs.forEach(function(e){
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+function showingLoadingAnimation(){
+    let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
+    imageLoadingSkeleton.style.display = "none";
+    let images_gallery = document.querySelector(".gallery");
+    let galleryElements = images_gallery.querySelectorAll("*");
+
+    
+    if(galleryElements.length < 30){
+        imageLoadingSkeleton.style.display = "block";
+    }
+    else{
+        imageLoadingSkeleton.style.display = "none";
+    }
+}
+
+setInterval(showingLoadingAnimation, 100);

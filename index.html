@@ -25,7 +25,7 @@
         
                 <div class="search-box">
                     <img src="images/search.png" alt="search icon">
-                    <input type="text" class="search" placeholder="Search high-resolution images">
+                    <input type="text" class="search-input" placeholder="Search high-resolution images">
                 </div>
             </div>
     
@@ -136,7 +136,7 @@
     <main>
         <section class="container">
             <!-- only for the editorial category -->
-            <div class="editorial-title-details">
+            <div class="editorial-title-details display-none">
                 <div class="blur-background"></div>
                 <div class="containing-div">
                     <div class="details">
@@ -150,13 +150,13 @@
                     </div>
                     <div class="search-box">
                         <img src="images/search.png" alt="search icon">
-                        <input type="text" class="search" placeholder="Search high-resolution images">
+                        <input type="text" class="search-input" placeholder="Search high-resolution images">
                     </div>
                 </div>
             </div>
 
             <!-- for other categories -->
-            <div class="other-categories">
+            <div class="other-categories display-none">
                 <div class="blur-background"></div>
                 <div class="containing-div">
                     <div class="details">
@@ -169,7 +169,24 @@
                     </div>
                 </div>
             </div>
+
+            <!-- While Searching Images -->
+            <div class="displaying-search-term">
+                <div class="search-term">
+
+                </div>
+            </div>
         </section>
+
+        <div class="image-loading-skeleton">
+            <!-- Image loading skeleton which will appear on the screen when the images will not be fully loaded -->
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+        </div>
 
         <section class="gallery">
             <!-- Images will be dynamically added here -->
@@ -179,7 +196,7 @@
         <section class="image-popup-window">
             <!-- Image Popup Window which will appear when you will click on an image -->
             <div class="close-button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="19" viewBox="0 96 960 960" width="19"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20"><path d="M251.333 878 178 804.667 406.667 576 178 347.333 251.333 274 480 502.667 708.667 274 782 347.333 553.333 576 782 804.667 708.667 878 480 649.333 251.333 878Z"/></svg>
             </div>
 
             <a href="" class="download-button" target="_blank">Download</a>
@@ -187,21 +204,22 @@
             <img src="" alt="preview image" class="preview-image">
 
             <div class="image-nav-control control-previous">
-                <img src="images/control-previous.png" alt="control previous">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20"><path d="M426.667 1002.67 0 576l426.667-426.667 87.666 88.333L175.999 576l338.334 338.334-87.666 88.336Z"/></svg>
             </div>
             <div class="image-nav-control control-next">
-                <img src="images/control-next.png" alt="control next">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20"><path d="M309.666 1001.33 222 913l338.334-338.333L222 236.333 309.666 148l426.667 426.667-426.667 426.663Z"/></svg>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- <footer>
         <div class="copyright">
             &#169; Manas Patil. All Rights Reserved.
         </div>
-    </footer>
+    </footer> -->
 
     <script src="js/script.js"></script>
     <script src="js/image_api.js"></script>
+    <script src="js/search_api.js"></script>
 </body>
 </html>
