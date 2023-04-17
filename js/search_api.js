@@ -30,3 +30,30 @@ imageSearchBoxs.forEach(function (imageSearchBox){
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+// About button on click action
+let aboutButton = document.querySelector(".about-button");
+let aboutSection = document.querySelector(".about-section");
+let aboutSectionCloseButton = document.querySelector(".about-section .close-button");
+
+// presets
+aboutSection.style.display = "none";
+
+aboutButton.addEventListener("click", function () {
+    aboutSection.style.display = "flex";
+    document.body.style.overflow = "hidden";
+});
+
+aboutSectionCloseButton.addEventListener("click", function () {
+    aboutSection.style.display = "none";
+    document.body.style.overflow = "auto";
+});

@@ -92,6 +92,7 @@ a{
     display: flex;
     align-items: center;
     border: 1px solid #eee;
+    box-sizing: border-box;
 }
 
 .header-section .top-header-section .search-box img{
@@ -126,7 +127,7 @@ a{
 }
 
 .vertical-line{
-    width: 2px;
+    min-width: 2px;
     height: 32px;
     align-self: center;
     background-color: #d1d1d1;
@@ -528,4 +529,110 @@ main .image-loading-skeleton .skeleton{
     100%{
         background-color: #eee;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About button styles */
+main .about-button{
+    height: 46px;
+    width: 46px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    border-top-left-radius: 100vw;
+    border-top-right-radius: 100vw;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+main .about-button img{
+    width: 32px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* About section styles */
+main .about-section{
+    width: 100%;
+    height: 100vh;
+    background: #00000061;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+main .about-section .container{
+    width: 600px;
+    max-width: 100%;
+    max-height: 100%;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* height: 610px; */
+    overflow-y: auto;
+}
+
+main .about-section .container .close-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 19px;
+    z-index: 40;
+    cursor: pointer;
+}
+
+main .about-section .container .content{
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+main .about-section .container .content .title{
+    font-size: 48px;
+    font-weight: 500;
+    color: #4f6f5c;
+}
+
+main .about-section .container .content .info{
+    font-size: 19px;
+    font-weight: 400;
+    color: #767676;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

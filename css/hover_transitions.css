@@ -32,3 +32,11 @@ main .image-popup-window .download-button{
 main .image-popup-window .download-button:hover{
     background: #37a866;;
 }
+
+main .about-button{
+    transition: transform 200ms ease;
+}
+
+main .about-button:hover{
+    transform: translate(4px) scale(1.15);
+}

@@ -46,6 +46,17 @@ searchBoxInput.addEventListener("blur", function (){
     searchBox.style.border = "1px solid transparent";
 });
 
+function changeSearchBoxPlaceholder() {
+  if (searchBox.clientWidth < 254) {
+    searchBoxInput.placeholder = "Search images";
+  }
+  else{
+    searchBoxInput.placeholder = "Search high-resolution images";
+  }
+}
+
+window.addEventListener('resize', changeSearchBoxPlaceholder);
+
 
 // categories on click color and border bottom effects
 let categoriesItems = document.querySelectorAll(".categories .js-on-click-effect");

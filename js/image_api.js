@@ -186,19 +186,36 @@ categoriesTabs.forEach(function(e){
 
 
 
-function showingLoadingAnimation(){
-    let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
-    imageLoadingSkeleton.style.display = "none";
-    let images_gallery = document.querySelector(".gallery");
-    let galleryElements = images_gallery.querySelectorAll("*");
+// function showingLoadingAnimation(){
+//     let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
+//     imageLoadingSkeleton.style.display = "none";
+//     let images_gallery = document.querySelector(".gallery");
+//     let galleryElements = images_gallery.querySelectorAll("*");
 
     
-    if(galleryElements.length < 30){
-        imageLoadingSkeleton.style.display = "block";
-    }
-    else{
-        imageLoadingSkeleton.style.display = "none";
-    }
-}
+//     if(galleryElements.length < 30){
+//         imageLoadingSkeleton.style.display = "block";
+//     }
+//     else{
+//         imageLoadingSkeleton.style.display = "none";
+//     }
+// }
 
-setInterval(showingLoadingAnimation, 100);
+// setInterval(showingLoadingAnimation, 100);
+
+let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
+console.log(imageLoadingSkeleton);
+let images_gallery = document.querySelector(".gallery");
+console.log(images_gallery);
+
+// window.addEventListener("onload", function(){
+//     imageLoadingSkeleton.style.display = "none";
+//     console.log("window is loading");
+// });
+
+window.onload = function() {
+    // This code will be executed after all the resources (including images) have finished loading
+    // Remove the loading skeleton here
+    imageLoadingSkeleton.style.display = "none";
+    console.log("window is loading");
+};

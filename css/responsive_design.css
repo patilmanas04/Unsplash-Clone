@@ -1,0 +1,115 @@
+@media screen and (max-width: 1122px) {
+    .header-section .top-header-section .mid{
+        display: none;
+    }
+    
+    .header-section .top-header-section .vertical-line{
+        display: none;
+    }
+}
+
+/* Gallery columns: 2 */
+@media screen and (max-width:984px){
+    main .gallery{
+        columns: 2;
+    }
+
+    .vertical-line{
+        min-width: 1px;
+    }
+}
+
+
+/*  */
+@media screen and (max-width:643px){
+    main .gallery{
+        columns: 1;
+    }
+
+    .vertical-line{
+        display: none;
+    }
+
+    .header-section .categories .angle-small-left{
+        left: 100px;
+    }
+
+    .header-section .categories .angle-small-left img{
+        width: 20px;
+    }
+
+    .header-section .categories .angle-small-right img{
+        width: 20px;
+    }
+}
+
+@media screen and (max-width: 759px){
+    main .container .editorial-title-details{
+        height: 310px;
+    }
+
+    main .container .other-categories{
+        height: 310px;
+    }
+
+    main .container .other-categories .containing-div .title{
+        font-size: 28px;
+    }
+
+    main .container .other-categories .containing-div .content{
+        font-size: 18px;
+    }
+
+    main .container .editorial-title-details .containing-div .title{
+        font-size: 28px;
+    }
+
+    main .container .editorial-title-details .containing-div .content{
+        font-size: 18px;
+    }
+
+    main .container .editorial-title-details .containing-div .search-box{
+        display: none;
+    }
+
+    main .about-button{
+        height: 40px;
+        width: 40px;
+    }
+
+    main .about-button img{
+        width: 28px;
+    }
+
+    .header-section .top-header-section .branding{
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width:560px){
+    .header-section .top-header-section .right .login{
+        display: none;
+    }
+
+    .header-section .top-header-section .search-box::placeholder{
+        content: "Search";
+    }
+}
+
+@media screen and (max-width:615px){
+    main .container .editorial-title-details .containing-div .title{
+        font-size: 24px;
+    }
+
+    main .container .editorial-title-details .containing-div .content{
+        font-size: 14px;
+    }
+
+    main .container .other-categories .containing-div .title{
+        font-size: 24px;
+    }
+
+    main .container .other-categories .containing-div .content{
+        font-size: 14px;
+    }
+}
