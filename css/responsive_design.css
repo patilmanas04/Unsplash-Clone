@@ -11,7 +11,7 @@
 /* Gallery columns: 2 */
 @media screen and (max-width:984px){
     main .gallery{
-        columns: 2;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .vertical-line{
@@ -23,7 +23,7 @@
 /*  */
 @media screen and (max-width:643px){
     main .gallery{
-        columns: 1;
+        grid-template-columns: 1fr;
     }
 
     .vertical-line{

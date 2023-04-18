@@ -49,13 +49,17 @@ let allImages = "";
 function appendImageToGallery(response){
     allImages = response;
     response.forEach(function(e, currentIndex){
+        console.log(e);
         let imageUrl = e.urls.regular;
         let gallery = document.querySelector(".gallery");
         let imageContainer = document.createElement('img');
         imageContainer.src = imageUrl;
-        imageContainer.className = "gallery-image";
+        imageContainer.loading = "lazy";
+        imageContainer.className = "gallery-image loading";
         gallery.appendChild(imageContainer);
 
+        
+        
         imageContainer.addEventListener("click", function(){
             imagePopupWindow.style.display = "block";
             fadedBackground.style.display = "block";
@@ -72,6 +76,14 @@ function appendImageToGallery(response){
             index = "";
         });
     });
+
+    let imagesInsideGallery = document.querySelectorAll("main .gallery .gallery-image");
+    
+    console.log(imagesInsideGallery.length);
+    
+    if(imagesInsideGallery.length < 5){
+        document.querySelector(".gallery").style.columns = 2;
+    }
 }
 
 nextButton.addEventListener("click", function(){
@@ -184,38 +196,12 @@ categoriesTabs.forEach(function(e){
 
 
 
-
-
-// function showingLoadingAnimation(){
-//     let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
-//     imageLoadingSkeleton.style.display = "none";
-//     let images_gallery = document.querySelector(".gallery");
-//     let galleryElements = images_gallery.querySelectorAll("*");
-
-    
-//     if(galleryElements.length < 30){
-//         imageLoadingSkeleton.style.display = "block";
-//     }
-//     else{
-//         imageLoadingSkeleton.style.display = "none";
-//     }
-// }
-
-// setInterval(showingLoadingAnimation, 100);
-
+// Showing the loading animation when the images are not loaded
 let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
-console.log(imageLoadingSkeleton);
-let images_gallery = document.querySelector(".gallery");
-console.log(images_gallery);
+let imageGalleryDisplayNone = document.querySelector(".gallery");
+imageGalleryDisplayNone.getElementsByClassName.display = "none";
 
-// window.addEventListener("onload", function(){
-//     imageLoadingSkeleton.style.display = "none";
-//     console.log("window is loading");
-// });
-
-window.onload = function() {
-    // This code will be executed after all the resources (including images) have finished loading
-    // Remove the loading skeleton here
+window.addEventListener("load", function(){
     imageLoadingSkeleton.style.display = "none";
-    console.log("window is loading");
-};
+    imageGalleryDisplayNone.getElementsByClassName.display = "block";
+});

@@ -40,3 +40,12 @@ main .about-button{
 main .about-button:hover{
     transform: translate(4px) scale(1.15);
 }
+
+/* smooth loading animation on the images */
+.gallery-image {
+    transition: opacity 2s ease-in-out;
+}
+
+.gallery-image .loading {
+    opacity: 0;
+}
