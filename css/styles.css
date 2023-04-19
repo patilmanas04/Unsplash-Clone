@@ -363,6 +363,9 @@ main .gallery {
     align-items: center;
     padding: 24px;
     background: #fff;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
 }
   
 main .gallery .gallery-image{
@@ -378,6 +381,7 @@ main .gallery .gallery-image{
 /* Footer Styles */
 footer{
     height: 80px;
+    width: 100%;
     color: #767676;
     background-color: #eee;
     display: flex;

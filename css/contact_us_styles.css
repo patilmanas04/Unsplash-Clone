@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.image{
+    height: 148px;
+    display: flex;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img{
+    height: 100%;
+    width: auto;
+}
+
+.container{
+    max-width: 500px;
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .branding{
+    font-family: 'Lobster Two', cursive;
+    font-size: 48px;
+    font-weight: 600;
+    color: #111;
+}
+
+.container .contact-us{
+    font-family: 'Lato', sans-serif;
+    font-size: 28px;
+    color: #111;
+    font-weight: bold;
+}
+
+.container .contact-us-text{
+    color: #111;
+    font-size: 15px;
+}
+
+.container .form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container .form label{
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.container .form input{
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    background: none;
+    border: 1px solid #767676;
+    border-radius: 3px;
+    padding: 0px 10px;
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 25px;
+}
+
+.container .form textarea{
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    outline: none;
+    background: none;
+    border: 1px solid #767676;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 25px;
+}
+
+.container .submit-button{
+    font-family: 'Lato', sans-serif;
+    height: 24px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #111;
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.response-line{
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #111;
+    font-weight: bold;
+}
+
+.error-text{
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e25c3d;
+    position: fixed;
+    width: 100%;
+    top: -100%;
+    transition: top 0.7s ease;
+}
+
+.error-text .close-button{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.error-text .close-button svg{
+    fill: white;
+    opacity: 0.7;
+    transition: color 0.1s ease;
+}
+
+.error-text .close-button:hover svg{
+    fill: white;
+    opacity: 1;
+}

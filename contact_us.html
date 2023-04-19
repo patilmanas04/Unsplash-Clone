@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contact_us_styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="error-text">
+        <div class="error-message">
+            Enter both email and password.
+        </div>
+        <div class="close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="17" viewBox="0 96 960 960" width="17"><path d="M251.333 878 178 804.667 406.667 576 178 347.333 251.333 274 480 502.667 708.667 274 782 347.333 553.333 576 782 804.667 708.667 878 480 649.333 251.333 878Z"/></svg>
+        </div>
+    </div>
+
+    <section class="image"><img src="images/photo-1638361634616-10ae6b8d8af4.avif" alt=""></section>
+
+    <section class="container">
+        <div class="branding">
+            Snapify
+        </div>
+
+        <div class="contact-us">
+            <b>Contact Us</b> 
+        </div>
+
+        <div class="contact-us-text">
+            We'd love to hear from you!
+        </div>
+
+        <form class="form">
+            <label for="name">Name</label>
+            <input type="text" class="name-input" placeholder="Your name">
+
+            <label for="email">Email</label>
+            <input type="email" class="email-input" placeholder="Your email address">
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="message-input" cols="30" rows="10" class="message-input" placeholder="Your message"></textarea>
+
+            <button type="button" class="submit-button">Submit request</button>
+        </form>
+
+        <div class="response-line">
+            We will do our best to respond to you within 24 business hours.
+        </div>
+    </section>
+
+    <script src="js/contact_us_validation.js"></script>
+</body>
+</html>

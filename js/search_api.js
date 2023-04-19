@@ -11,7 +11,7 @@ imageSearchBoxs.forEach(function (imageSearchBox){
 
             let searchValue = imageSearchBox.value;
             // let imageSearchUrl = `https://api.unsplash.com/search/photos?query=${searchValue}&per_page=50&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA`;
-            let imageSearchUrl = `https://api.unsplash.com/photos/random?query=${searchValue}&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA&count=30`;
+            let imageSearchUrl = `https://api.unsplash.com/photos/random?query=${searchValue}&client_id=WUyG0J-piF8tE-aMvpI8IX8GRtDMmNzRXKQvVBMeqzg&count=30`;
 
             titleDetails.forEach(function(e){
                 e.style.display = "none";
@@ -46,7 +46,9 @@ let aboutSection = document.querySelector(".about-section");
 let aboutSectionCloseButton = document.querySelector(".about-section .close-button");
 
 // presets
-aboutSection.style.display = "none";
+aboutSection.style.display = "flex";
+document.body.style.overflow = "hidden";
+
 
 aboutButton.addEventListener("click", function () {
     aboutSection.style.display = "flex";

@@ -1,30 +1,46 @@
 // header categories slider
-let categories = document.querySelector(".categories .right");
+let categoriesRight = document.querySelector(".categories .right");
 let angleSmallLeft = document.querySelector(".angle-small-left");
 let angleSmallRight = document.querySelector(".angle-small-right");
+let scrollFraction = 5;
+
+window.addEventListener("resize", function (){
+    if(this.document.body.clientWidth < 738){
+        scrollFraction = 8;
+    }
+
+    else if(this.document.body.clientWidth < 484){
+        scrollFraction = 11;
+    }
+
+});
+
 
 window.addEventListener("load", function (){
-    categories.scrollLeft = 0;
+    categoriesRight.scrollLeft = 0;
     angleSmallLeft.style.visibility = "hidden";
+
 });
 
 angleSmallLeft.addEventListener("click", function (){
-    let maxScrollValue = categories.scrollWidth - categories.clientWidth;
-    categories.scrollLeft -= 275;
+    let maxScrollValue = categoriesRight.scrollWidth - categoriesRight.clientWidth;
+    let nextScrollValue = maxScrollValue / scrollFraction;
+    categoriesRight.scrollLeft -= nextScrollValue + 10;
     angleSmallRight.style.visibility = "visible"; 
 
-    let effectiveScrollValue = categories.scrollLeft - 275; 
+    let effectiveScrollValue = categoriesRight.scrollLeft - nextScrollValue; 
     if(effectiveScrollValue <= 0){
         angleSmallLeft.style.visibility = "hidden";
     }
 });
 
 angleSmallRight.addEventListener("click", function (){
-    let maxScrollValue = categories.scrollWidth - categories.clientWidth;
-    categories.scrollLeft += 275; 
+    let maxScrollValue = categoriesRight.scrollWidth - categoriesRight.clientWidth;
+    let nextScrollValue = maxScrollValue / scrollFraction;
+    categoriesRight.scrollLeft += nextScrollValue + 10; 
     angleSmallLeft.style.visibility = "visible";
 
-    let effectiveScrollValue = categories.scrollLeft + 275;
+    let effectiveScrollValue = categoriesRight.scrollLeft + nextScrollValue;
     if(effectiveScrollValue >= maxScrollValue){
         angleSmallRight.style.visibility = "hidden";
     }
@@ -40,10 +56,12 @@ let searchBoxInput = document.querySelector(".header-section .top-header-section
 
 searchBoxInput.addEventListener("focus", function (){
     searchBox.style.border = "1px solid #d1d1d1";
+    searchBox.style.backgroundColor = "white";
 });
 
 searchBoxInput.addEventListener("blur", function (){
     searchBox.style.border = "1px solid transparent";
+    searchBox.style.backgroundColor = "#eee";
 });
 
 function changeSearchBoxPlaceholder() {

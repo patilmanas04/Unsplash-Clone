@@ -11,7 +11,7 @@
 /* Gallery columns: 2 */
 @media screen and (max-width:984px){
     main .gallery{
-        grid-template-columns: repeat(2, 1fr);
+        columns: 2;
     }
 
     .vertical-line{
@@ -21,9 +21,9 @@
 
 
 /*  */
-@media screen and (max-width:643px){
+@media screen and (max-width:748px){
     main .gallery{
-        grid-template-columns: 1fr;
+        columns: 1;
     }
 
     .vertical-line{
@@ -32,6 +32,10 @@
 
     .header-section .categories .angle-small-left{
         left: 100px;
+    }
+
+    .header-section .categories .angle-small-right{
+        right: 10px;
     }
 
     .header-section .categories .angle-small-left img{
@@ -97,12 +101,19 @@
 }
 
 @media screen and (max-width:615px){
+    main .container .editorial-title-details .containing-div{
+        margin: auto;
+        margin-right: 0px;
+        margin-left: 20px;
+        width: fit-content;
+    }
+
     main .container .editorial-title-details .containing-div .title{
         font-size: 24px;
     }
 
     main .container .editorial-title-details .containing-div .content{
-        font-size: 14px;
+        font-size: 15px;
     }
 
     main .container .other-categories .containing-div .title{
@@ -110,6 +121,145 @@
     }
 
     main .container .other-categories .containing-div .content{
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    main .container .other-categories .containing-div{
+        margin: auto 20px;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 611px){
+    main .about-section .container{
+        border-radius: 0px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .header-section .top-header-section .branding{
+        font-size: 25px;
+    }
+
+    .header-section .top-header-section{
+        padding: 15px 18px;
+    }
+
+    .header-section .categories .angle-small-left{
+        display: none;
+    }
+
+    .header-section .categories .angle-small-right{
+        display: none;
+    }
+
+    .header-section .categories .right{
+        overflow: revert;
+    }
+
+    .header-section .categories{
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .header-section .categories::-webkit-scrollbar{
+        display: none;
+    }
+
+    main .image-popup-window{
+        background-color: transparent;
+        backdrop-filter: blur(5px);
+    }
+
+    main .image-popup-window .image-nav-control{
+        top: 90%;
+    }
+
+    main .image-popup-window .image-nav-control svg{
+        fill: white;
+    }
+
+    main .image-popup-window .preview-image{
+        height: auto !important; 
+        width: 90%;
+        border-radius: 0px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border: 1px solid white;
+    }
+
+    main .image-popup-window .download-button{
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    main .image-popup-window .close-button svg{
+        fill: white;
+    }
+
+    main .about-section .container .content .title{
+        font-size: 38px;
+    }
+
+    main .about-section .container .content .info{
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width:1027px){
+    main .image-popup-window{
+        height: 90vh;
+        width: 90%;
+    }
+
+    main .image-popup-window .preview-image{
+        height: 50%;
+    }
+}
+
+@media screen and (max-width:684px){
+    main .image-popup-window .preview-image{
+        height: 40%;
+    }
+}
+
+@media screen and (max-width:594px){
+    main .image-popup-window{
+        height: 100vh;
+        width: 100%;
+        border-radius: 0px;
+    }
+}
+
+@media screen and (max-width:543px){
+    main .image-popup-window .preview-image{
+        height: 30%;
+    }
+}
+
+@media screen and (max-width:368px){
+    main .image-popup-window .download-button{
+        top: 20px;
+        right: 20px;
+    }
+
+    main .image-popup-window .close-button{
+        top: 20px;
+        left: 20px;
+    }
+
+    .header-section .top-header-section .left{
+        gap: 8px;
+    }
+
+    .header-section .top-header-section .branding{
+        font-size: 22px;
+    }
+
+    .header-section .top-header-section .search-box{
+        transform: scale(0.9);
+    }
+
+    main .about-section .container .content .title{
+        line-height: 1.1;
     }
 }

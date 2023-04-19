@@ -1,0 +1,71 @@
+.toggle-menu-blur-background{
+    box-sizing: border-box;
+    position: fixed;
+    z-index: -50;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* .toggle-menu{
+    width: 100%;
+    height: 100vh;
+    background: red;
+    position: fixed;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+} */
+
+.toggle-menu{
+    height: 100vh;
+    max-width: 412px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 100px 50px;
+    position: fixed;
+    z-index: 100;
+    left: -100%;
+    top: 0px;
+    transition: left 0.2s ease-in-out;
+}
+
+.toggle-menu .menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toggle-menu .menu .menu-item{
+    font-size: 23px;
+    color: #767676;
+    width: fit-content;
+}
+
+.toggle-menu .menu .display-none{
+    display: block;
+}
+
+.toggle-menu .menu .menu-item:hover{
+    color: #111;
+}
+
+.toggle-menu .social-media{
+    display: flex;
+    gap: 12px;
+}
+
+.toggle-menu .close-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}

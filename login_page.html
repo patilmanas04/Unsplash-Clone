@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login_page_styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="error-text">
+        <div class="error-message">
+            Enter both email and password.
+        </div>
+        <div class="close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="17" viewBox="0 96 960 960" width="17"><path d="M251.333 878 178 804.667 406.667 576 178 347.333 251.333 274 480 502.667 708.667 274 782 347.333 553.333 576 782 804.667 708.667 878 480 649.333 251.333 878Z"/></svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="branding">
+            Snapify
+        </div>
+
+        <div class="login-title">
+            <div class="title">
+                Login
+            </div>
+
+            <div class="greeting">
+                Welcome back!
+            </div>
+        </div>
+
+        <div class="login-options">
+            <a href="#"><img src="images/facebook white.png" alt="facebook" class="icon">Login with Facebook</a>
+            <div class="or-option">
+                OR
+            </div>
+        </div>
+
+        <form class="login-form">
+            <label for="email">Email</label>
+            <input type="email" class="email-input">
+
+            <label for="password">Password</label>
+            <input type="password" class="password-input">
+
+            <button type="button" class="login-button">Login</button>
+        </form>
+
+        <div class="join">
+            <div class="join-text">
+                Don't have an account?
+            </div>
+
+            <div class="join-link">
+                <a href="join_page.html">Join Snapify</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login_validation.js"></script>
+</body>
+</html>

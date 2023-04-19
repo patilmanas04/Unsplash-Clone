@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.main-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    /* background: red; */
+}
+
+.main-container .left-container{
+    width: auto;
+    height: 100%;
+    padding: 40px;
+    background: url("/images/join page.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    gap: 200px;
+    flex-direction: column;
+    color: white;
+}
+
+.main-container .left-container .branding{
+    font-family: 'Lobster Two', cursive;
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+}
+
+.main-container .left-container .text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-container .left-container .text .title{
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.main-container .left-container .text .description{
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.main-container .right-container{
+    width: 80%;
+    height: 100%;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.main-container .right-container .main-form-container{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.main-container .right-container .join-snapify{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .right-container .join-snapify .join-text{
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+    color: #111;
+    font-weight: bold;
+}
+
+.main-container .right-container .join-snapify .join-text span{
+    font-family: 'Lobster Two', cursive;
+    font-size: 48px;
+    font-weight: 600;
+    color: #111;
+}
+
+.main-container .right-container .join-snapify .have-an-account{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #111;
+    font-weight: 500;
+}
+
+.main-container .right-container .join-snapify .have-an-account a{
+    text-decoration: underline;
+    color: #767676;
+}
+
+.main-container .right-container .login-options{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.main-container .right-container .or-option{
+    font-size: 13px;
+    color: #111;
+}
+
+.main-container .right-container .login-options a{
+    font-family: 'Lato', sans-serif;
+    height: 24px;
+    padding: 20px;
+    background: #0d6ce3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #fff;
+}
+
+.main-container .right-container .login-options a .icon{
+    width: 18px;
+    margin-right: 10px;
+}
+
+.main-container .right-container .join-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-container .right-container .join-form .flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container .right-container .join-form .flex-container .flex-element{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+}
+
+.main-container .right-container .join-form label{
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.main-container .right-container .join-form input{
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    background: none;
+    border: 1px solid #767676;
+    border-radius: 3px;
+    padding: 0px 10px;
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 25px;
+}
+
+.main-container .right-container .join-form label .condition{
+    color: #767676;
+}
+
+.main-container .right-container .join-form .submit-button{
+    font-family: 'Lato', sans-serif;
+    height: 24px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #111;
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.main-container .right-container .terms-and-conditions{
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #767676;
+    font-weight: 500;
+    text-align: center;
+}
+
+.main-container .right-container .terms-and-conditions a{
+    text-decoration: underline;
+    color: #767676;
+}
+
+.error-text{
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e25c3d;
+    position: fixed;
+    width: 100%;
+    top: -100%;
+    transition: top 0.7s ease;
+}
+
+.error-text .close-button{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.error-text .close-button svg{
+    fill: white;
+    opacity: 0.7;
+    transition: color 0.1s ease;
+}
+
+.error-text .close-button:hover svg{
+    fill: white;
+    opacity: 1;
+}
+
+@media screen and (max-width: 904px){
+    .main-container .right-container{
+        width: 100%;
+        overflow-y: revert;
+        height: auto;
+    }
+
+    .main-container{
+        flex-direction: column;
+    }
+
+    body{
+        overflow-y: auto;
+    }
+
+    .main-container .left-container{
+        height: fit-content;
+        gap: 50px;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .main-container .left-container .text{
+        gap: 8px;
+    }
+
+    .main-container .left-container .branding{
+        font-size: 30px;
+    }
+
+    .main-container .left-container .text .title{
+        font-size: 24px;
+    }
+
+    .main-container .left-container .text .description{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:433px){
+    .main-container .right-container{
+        padding: 30px;
+    }
+}

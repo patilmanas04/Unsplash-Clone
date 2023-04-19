@@ -1,5 +1,11 @@
-// Access Key - ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA
+// Access Key - ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA for random title images
+// Access Key - D0VoBabslhk-aM9VW1sHXbY-sO_CVsZDpsM8yDvKQkY for random gallery images
+// Access Key - WUyG0J-piF8tE-aMvpI8IX8GRtDMmNzRXKQvVBMeqzg for random search images
+
 // url for random images - https://api.unsplash.com/random/photos?orientation=landscape&query=wallpaper&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA
+
+
+
 
 // inserting random image in the editorial category
 let url1 = "https://api.unsplash.com/photos/random?orientation=landscape&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA";
@@ -24,7 +30,7 @@ introductionContainerSettingDefaults.style.display = "none";
 
 
 // Adding the images to the gallery dynamically in the editorial gallery
-let url2 = "https://api.unsplash.com/photos/random?client_id=HB6DnSO4g5aZ4oHbaFwFK5IZUareL-qF5kuq8VuGwZk&count=30";
+let url2 = "https://api.unsplash.com/photos/random?client_id=D0VoBabslhk-aM9VW1sHXbY-sO_CVsZDpsM8yDvKQkY&count=30";
 
 let galleryImageAJAXCall = new XMLHttpRequest();
 galleryImageAJAXCall.open('GET', url2);
@@ -39,7 +45,7 @@ galleryImageAJAXCall.addEventListener("load", function(e){
 let imagePopupWindow = document.querySelector(".image-popup-window");
 let fadedBackground = document.querySelector(".faded-background");
 let previewImage = document.querySelector(".preview-image");
-let closeImagePopupWindowButton = document.querySelector(".close-button");
+let closeImagePopupWindowButton = document.querySelector(".image-popup-window .close-button");
 let downloadButton = document.querySelector(".download-button");
 let nextButton = document.querySelector(".image-popup-window .control-next");
 let previousButton = document.querySelector(".image-popup-window .control-previous");
@@ -63,6 +69,7 @@ function appendImageToGallery(response){
         imageContainer.addEventListener("click", function(){
             imagePopupWindow.style.display = "block";
             fadedBackground.style.display = "block";
+            document.body.style.overflow = "hidden";
             previewImage.src = imageUrl;
             downloadButton.href = e.links.html;
             index = currentIndex;
@@ -74,6 +81,7 @@ function appendImageToGallery(response){
             previewImage.src = "";
             downloadButton.href = "";
             index = "";
+            document.body.style.overflow = "auto";
         });
     });
 
@@ -123,7 +131,7 @@ categoriesTabs.forEach(function(e){
         galleryOfImages.innerHTML = "";
         let search = e.target.innerText;
         // let api_search_url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA`;
-        let api_search_url = `https://api.unsplash.com/photos/random?query=${search}&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA&count=30`;
+        let api_search_url = `https://api.unsplash.com/photos/random?query=${search}&client_id=D0VoBabslhk-aM9VW1sHXbY-sO_CVsZDpsM8yDvKQkY&count=30`;
         console.log(api_search_url);
 
         let newGalleryImageAJAXCall = new XMLHttpRequest();
