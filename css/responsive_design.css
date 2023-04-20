@@ -14,6 +14,10 @@
         columns: 2;
     }
 
+    main .image-loading-skeleton{
+        columns: 2;
+    }
+
     .vertical-line{
         min-width: 1px;
     }
@@ -23,6 +27,10 @@
 /*  */
 @media screen and (max-width:748px){
     main .gallery{
+        columns: 1;
+    }
+
+    main .image-loading-skeleton{
         columns: 1;
     }
 
