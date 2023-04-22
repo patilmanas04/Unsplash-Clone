@@ -46,8 +46,8 @@ let aboutSection = document.querySelector(".about-section");
 let aboutSectionCloseButton = document.querySelector(".about-section .close-button");
 
 // presets
-aboutSection.style.display = "flex";
-document.body.style.overflow = "hidden";
+aboutSection.style.display = "none";
+document.body.style.overflow = "auto";
 
 
 aboutButton.addEventListener("click", function () {

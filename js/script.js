@@ -97,7 +97,19 @@ categoriesItems.forEach(function (item){
     });
 })
 
+categoriesItems.forEach(item =>{
+    item.addEventListener("mouseover", function(){
+        item.style.color = "#111";
+    });
+})
 
+categoriesItems.forEach(item =>{
+    item.addEventListener("mouseout", function(){
+        if(item.style.borderBottom != "2px solid black"){
+            item.style.color = "#767676";
+        }
+    });
+});
 
 let logo = document.querySelector(".header-section .top-header-section .left .branding");
 logo.addEventListener("click", function (){

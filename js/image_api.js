@@ -55,12 +55,12 @@ let allImages = "";
 function appendImageToGallery(response){
     allImages = response;
     response.forEach(function(e, currentIndex){
-        console.log(e);
+        // console.log(e);
         let imageUrl = e.urls.regular;
         let gallery = document.querySelector(".gallery");
         let imageContainer = document.createElement('img');
         imageContainer.src = imageUrl;
-        imageContainer.loading = "lazy";
+        // imageContainer.loading = "lazy";
         imageContainer.className = "gallery-image loading";
         gallery.appendChild(imageContainer);
 
@@ -87,7 +87,7 @@ function appendImageToGallery(response){
 
     let imagesInsideGallery = document.querySelectorAll("main .gallery .gallery-image");
     
-    console.log(imagesInsideGallery.length);
+    // console.log(imagesInsideGallery.length);
     
     if(imagesInsideGallery.length < 5){
         document.querySelector(".gallery").style.columns = 2;
@@ -122,7 +122,7 @@ previousButton.addEventListener("click", function(){
 
 
 let categoriesTabs = document.querySelectorAll(".category");
-console.log(categoriesTabs);
+// console.log(categoriesTabs);
 
 categoriesTabs.forEach(function(e){
     e.addEventListener("click", function(e){
@@ -132,7 +132,7 @@ categoriesTabs.forEach(function(e){
         let search = e.target.innerText;
         // let api_search_url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&client_id=ozXScMyHblGMcBhsey3YVGsdHYygc0JiKHW-5KUdcfA`;
         let api_search_url = `https://api.unsplash.com/photos/random?query=${search}&client_id=D0VoBabslhk-aM9VW1sHXbY-sO_CVsZDpsM8yDvKQkY&count=30`;
-        console.log(api_search_url);
+        // console.log(api_search_url);
 
         let newGalleryImageAJAXCall = new XMLHttpRequest();
         newGalleryImageAJAXCall.open('GET', api_search_url);
@@ -140,7 +140,7 @@ categoriesTabs.forEach(function(e){
 
         newGalleryImageAJAXCall.addEventListener("load", function(e){
             let api_response = JSON.parse(e.target.response);
-            console.log(api_response);
+            // console.log(api_response);
             appendImageToGallery(api_response);
         });
 
@@ -156,7 +156,7 @@ categoriesTabs.forEach(function(e){
         else{
             imageContainer.style.display = "none";
             introductionContainer.style.display = "flex";
-            console.log("else part");
+            // console.log("else part");
         }
 
         let categoriesDefinations = {

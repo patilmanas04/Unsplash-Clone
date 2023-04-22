@@ -19,7 +19,7 @@ toggleMenuCloseButton.addEventListener("click", function () {
 
 
 let toggleMenuItems = document.querySelectorAll(".toggle-menu-item");
-console.log(toggleMenuItems);
+// console.log(toggleMenuItems);
 toggleMenuItems.forEach((item) => {
     item.addEventListener("click", () => {
         document.body.style.overflow = "auto";
