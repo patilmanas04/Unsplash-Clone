@@ -121,6 +121,7 @@ a{
 }
 
 .header-section .top-header-section .mid .unsplash-plus{
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background: linear-gradient(135deg,#fa00ff,#00e0ff 50%,#fa00ff);
     background-clip: text;
@@ -153,6 +154,10 @@ a{
     scrollbar-width: none;
     gap: 1.6rem;
     height: 100%;
+}
+
+.header-section .categories .right::-webkit-scrollbar{
+    display: none;
 }
 
 .header-section .categories .right .category, .header-section .categories .left{
