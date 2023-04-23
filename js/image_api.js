@@ -54,18 +54,18 @@ let allImages = "";
 
 function appendImageToGallery(response){
     allImages = response;
+    // console.log(response);
     response.forEach(function(e, currentIndex){
         // console.log(e);
-        let imageUrl = e.urls.regular;
-        let gallery = document.querySelector(".gallery");
-        let imageContainer = document.createElement('img');
+        const gallery = document.querySelector(".gallery");
+        const imageContainer = document.createElement('img');
+        const imageUrl = e.urls.regular;
         imageContainer.src = imageUrl;
-        // imageContainer.loading = "lazy";
-        imageContainer.className = "gallery-image loading";
-        gallery.appendChild(imageContainer);
+        imageContainer.loading = "lazy";
+        imageContainer.className = "gallery-image";
+        gallery.appendChild(imageContainer);     
 
-        
-        
+
         imageContainer.addEventListener("click", function(){
             imagePopupWindow.style.display = "block";
             fadedBackground.style.display = "block";
@@ -207,9 +207,9 @@ categoriesTabs.forEach(function(e){
 // Showing the loading animation when the images are not loaded
 let imageLoadingSkeleton = document.querySelector(".image-loading-skeleton");
 let imageGalleryDisplayNone = document.querySelector(".gallery");
-imageGalleryDisplayNone.getElementsByClassName.display = "none";
+imageGalleryDisplayNone.style.display = "none";
 
 window.addEventListener("load", function(){
     imageLoadingSkeleton.style.display = "none";
-    imageGalleryDisplayNone.getElementsByClassName.display = "block";
+    imageGalleryDisplayNone.style.display = "block";
 });

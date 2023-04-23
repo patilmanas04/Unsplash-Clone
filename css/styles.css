@@ -121,7 +121,7 @@ a{
 }
 
 .header-section .top-header-section .mid .unsplash-plus{
-    -webkit-background-clip: text;
+    -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent;
     background: linear-gradient(135deg,#fa00ff,#00e0ff 50%,#fa00ff);
     background-clip: text;
@@ -376,7 +376,7 @@ main .gallery {
 main .gallery .gallery-image{
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: auto;
     cursor: pointer;
     margin-bottom: 22px;
 }  
