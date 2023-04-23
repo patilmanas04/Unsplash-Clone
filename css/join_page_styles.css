@@ -24,7 +24,7 @@ a{
     width: auto;
     height: 100%;
     padding: 40px;
-    background: url("/images/join page.jpg");
+    background-image: url("../images/join\ page.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
