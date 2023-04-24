@@ -75,6 +75,8 @@ function changeSearchBoxPlaceholder() {
 
 window.addEventListener('resize', changeSearchBoxPlaceholder);
 
+changeSearchBoxPlaceholder();
+
 
 // categories on click color and border bottom effects
 let categoriesItems = document.querySelectorAll(".categories .js-on-click-effect");

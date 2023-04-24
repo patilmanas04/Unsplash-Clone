@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+*:focus{
+    outline: none;
+}
+
 /* commom styles */
 body{
     font-family: 'Lato', sans-serif;
@@ -146,7 +150,6 @@ a{
 }
 
 .header-section .categories .right{
-    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -400,8 +403,8 @@ footer{
 
 /* Image Popup Window Styles */
 main .image-popup-window{
-    height: 80vh;
-    width: 80%;
+    height: 90vh;
+    width: 90%;
     background-color: white;
     position: fixed;
     top: 50%;

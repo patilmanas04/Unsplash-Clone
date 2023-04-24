@@ -56,18 +56,26 @@ function appendImageToGallery(response){
     allImages = response;
     // console.log(response);
     response.forEach(function(e, currentIndex){
-        // console.log(e);
+        console.log(e);
         const gallery = document.querySelector(".gallery");
         const imageContainer = document.createElement('img');
         const imageUrl = e.urls.regular;
         imageContainer.src = imageUrl;
         imageContainer.loading = "lazy";
         imageContainer.className = "gallery-image";
-        gallery.appendChild(imageContainer);     
+        gallery.appendChild(imageContainer);  
 
-
+        
         imageContainer.addEventListener("click", function(){
-            imagePopupWindow.style.display = "block";
+
+            // if(e.height > e.width){
+            //     previewImage.style.height = "80%";
+            // }    
+            // else{
+            //     previewImage.style.height = "50%";
+            // }
+
+            imagePopupWindow.style.display = "flex";
             fadedBackground.style.display = "block";
             document.body.style.overflow = "hidden";
             previewImage.src = imageUrl;
@@ -98,14 +106,31 @@ nextButton.addEventListener("click", function(){
     if(index < allImages.length - 1){
         previewImage.src = allImages[index + 1].urls.regular;
         downloadButton.href = allImages[index + 1].links.html;
+
+        // if(allImages[index + 1].height > allImages[index + 1].width){
+        //     previewImage.style.height = "75%";
+        // }    
+        // else{
+        //     previewImage.style.height = "50%";
+        // }
+
         index++;
     }
+
 });
 
 previousButton.addEventListener("click", function(){
     if(index > 0){
         previewImage.src = allImages[index - 1].urls.regular;
         downloadButton.href = allImages[index - 1].links.html;
+
+        // if(allImages[index + 1].height > allImages[index + 1].width){
+        //     previewImage.style.height = "80%";
+        // }    
+        // else{
+        //     previewImage.style.height = "50%";
+        // }
+
         index--;
     }
 });
