@@ -427,6 +427,7 @@ main .faded-background{
     width: 100%;
     z-index: 15;
     display: none;
+    backdrop-filter: blur(5px);
 }
 
 main .image-popup-window .close-button{
@@ -615,6 +616,12 @@ main .about-section .container{
     box-sizing: border-box;
     /* height: 610px; */
     overflow-y: auto;
+    /* background: url("../images/join\ page.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 1px solid #fff; */
 }
 
 main .about-section .container .close-button{
@@ -638,12 +645,14 @@ main .about-section .container .content .title{
     font-size: 48px;
     font-weight: 500;
     color: #4f6f5c;
+    /* color: #fff; */
 }
 
 main .about-section .container .content .info{
     font-size: 19px;
     font-weight: 400;
     color: #767676;
+    /* color: #fff; */
     display: flex;
     flex-direction: column;
     gap: 10px;

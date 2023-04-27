@@ -46,7 +46,22 @@ angleSmallRight.addEventListener("click", function (){
     }
 });
 
+categoriesRight.addEventListener("scroll", ()=>{
+    if(categoriesRight.scrollLeft == 0){
+        angleSmallLeft.style.visibility = "hidden";
+    }
+    else if(categoriesRight.scrollLeft > 0){
+        angleSmallLeft.style.visibility = "visible";
+    }
 
+    let maxScrollValue = categoriesRight.scrollWidth - categoriesRight.clientWidth;
+    if(categoriesRight.scrollLeft < maxScrollValue){
+        angleSmallRight.style.visibility = "visible";
+    }
+    else if(categoriesRight.scrollLeft >= maxScrollValue){
+        angleSmallRight.style.visibility = "hidden";
+    }
+});
 
 
 

@@ -36,6 +36,8 @@
     left: -100%;
     top: 0px;
     transition: left 0.2s ease-in-out;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .toggle-menu .menu{
