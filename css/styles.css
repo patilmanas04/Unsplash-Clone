@@ -403,7 +403,8 @@ footer{
 
 /* Image Popup Window Styles */
 main .image-popup-window{
-    height: 90vh;
+    max-height: 550px;
+    height: 100%;
     width: 90%;
     background-color: white;
     position: fixed;
@@ -411,11 +412,100 @@ main .image-popup-window{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     display: none;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+main .image-popup-window .image-information{
+    position: absolute;
+    z-index: 100;
+    bottom: -100%;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main .image-popup-window .image-information .information-values{
+    display: flex;
+    gap: 70px;
+}
+
+main .image-popup-window .image-information .information-values .information-tab{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+main .image-popup-window .image-information .information-values .information-tab .title{
+    color: #767676;
+}
+
+main .image-popup-window .image-information .other-informations{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+main .image-popup-window .image-information .other-informations .information-tab{
+    display: flex;
+    gap: 10px;
+}
+
+main .image-popup-window .image-information .other-informations .information-tab .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .image-popup-window .image-information .other-informations .information-tab .icon svg{
+    fill: #767676;
+}
+
+main .image-popup-window .image-information .other-informations .information-tab .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #767676;
+}
+
+main .image-popup-window .slider-animation{
+    width: 100px;
+    height: 1px;
+    background: blue;
+    position: absolute;
+    z-index: 101;
+    bottom: 10px;
+    animation: slider-animation 500ms linear infinite alternate;
+}
+
+@keyframes slider-animation{
+    0%{
+        bottom: 10px;
+    }
+    /* 25%{
+        bottom: 12.5px;
+    }
+    50%{
+        bottom: 15px;
+    }
+    75%{
+        bottom: 17.5px;
+    } */
+    100%{
+        bottom: 20px;
+    }
 }
 
 main .faded-background{
@@ -455,8 +545,6 @@ main .image-popup-window .preview-image{
     width: auto;
     max-width: 80%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
     position: absolute;
     left: 50%;
     top: 50%;

@@ -51,6 +51,15 @@ let nextButton = document.querySelector(".image-popup-window .control-next");
 let previousButton = document.querySelector(".image-popup-window .control-previous");
 let index = 0;
 let allImages = "";
+let imageLocation = document.querySelector(".image-information .other-informations .location");
+let imageLocationText = document.querySelector(".image-information .other-informations .location .text");
+let imageCamera = document.querySelector(".image-information .other-informations .camera");
+let imageCameraText = document.querySelector(".image-information .other-informations .camera .text");
+let imageViews = document.querySelector(".image-information .information-values .views .value");
+let imageDownloads = document.querySelector(".image-information .information-values .downloads .value");
+let imageLikes = document.querySelector(".image-information .information-values .likes .value");
+let imageDescription = document.querySelector(".image-information .other-informations .description");
+let imageDescriptionText = document.querySelector(".image-information .other-informations .description .text");
 
 function appendImageToGallery(response){
     allImages = response;
@@ -74,6 +83,26 @@ function appendImageToGallery(response){
             // else{
             //     previewImage.style.height = "50%";
             // }
+
+            if(e.location.city == null && e.location.country == null){
+                imageLocation.style.display = "none";
+            }
+            else if(e.location.city != null && e.location.country != null){
+                imageLocationText.innerHTML = `${e.location.city}, ${e.location.country}`;
+            }
+            else if(e.location != null){
+                imageLocationText.innerHTML = `${e.location.country}`;
+            }
+
+            imageViews.innerHTML = `${e.views}`;
+            imageDownloads.innerHTML = `${e.downloads}`;
+            imageLikes.innerHTML = `${e.likes}`;
+            if(e.alt_description != null){
+                imageDescriptionText.innerHTML = e.alt_description;
+            }
+            else{
+                imageDescription.style.display = none;
+            }
 
             imagePopupWindow.style.display = "flex";
             fadedBackground.style.display = "block";
@@ -107,6 +136,26 @@ nextButton.addEventListener("click", function(){
         previewImage.src = allImages[index + 1].urls.regular;
         downloadButton.href = allImages[index + 1].links.html;
 
+        if(allImages[index + 1].location.city == null && allImages[index + 1].location.country == null){
+            imageLocation.style.display = "none";
+        }
+        else if(allImages[index + 1].location.city != null && allImages[index + 1].location.country != null){
+            imageLocationText.innerHTML = `${allImages[index + 1].location.city}, ${allImages[index + 1].location.country}`;
+        }
+        else if(allImages[index + 1].location != null){
+            imageLocationText.innerHTML = `${allImages[index + 1].location.country}`;
+        }
+
+        imageViews.innerHTML = `${allImages[index + 1].views}`;
+        imageDownloads.innerHTML = `${allImages[index + 1].downloads}`;
+        imageLikes.innerHTML = `${allImages[index + 1].likes}`;
+        if(allImages[index + 1].alt_description != null){
+            imageDescriptionText.innerHTML = allImages[index + 1].alt_description;
+        }
+        else{
+            imageDescription.style.display = none;
+        }
+
         // if(allImages[index + 1].height > allImages[index + 1].width){
         //     previewImage.style.height = "75%";
         // }    
@@ -131,6 +180,25 @@ previousButton.addEventListener("click", function(){
         //     previewImage.style.height = "50%";
         // }
 
+        if(allImages[index - 1].location.city == null && allImages[index - 1].location.country == null){
+            imageLocation.style.display = "none";
+        }
+        else if(allImages[index - 1].location.city != null && allImages[index - 1].location.country != null){
+            imageLocationText.innerHTML = `${allImages[index - 1].location.city}, ${allImages[index - 1].location.country}`;
+        }
+        else if(allImages[index - 1].location != null){
+            imageLocationText.innerHTML = `${allImages[index - 1].location.country}`;
+        }
+
+        imageViews.innerHTML = `${allImages[index - 1].views}`;
+        imageDownloads.innerHTML = `${allImages[index - 1].downloads}`;
+        imageLikes.innerHTML = `${allImages[index - 1].likes}`;
+        if(allImages[index - 1].alt_description != null){
+            imageDescriptionText.innerHTML = allImages[index - 1].alt_description;
+        }
+        else{
+            imageDescription.style.display = none;
+        }
         index--;
     }
 });
