@@ -16,12 +16,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.image img{
-    object-fit: cover;
-    width: 100%;
-    height: auto;
+    background-image: url("../images/contact\ us.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container{
