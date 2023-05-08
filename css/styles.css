@@ -539,9 +539,11 @@ main .image-popup-window .download-button{
 }
 
 main .image-popup-window .preview-image{
-    height: 80%;
+    /* height: 80%;
     width: auto;
-    max-width: 80%;
+    max-width: 80%; */
+    height: inherit;
+    border-radius: 0px;
     object-fit: cover;
     position: absolute;
     left: 50%;

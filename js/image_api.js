@@ -45,6 +45,7 @@ galleryImageAJAXCall.addEventListener("load", function(e){
 let imagePopupWindow = document.querySelector(".image-popup-window");
 let fadedBackground = document.querySelector(".faded-background");
 let previewImage = document.querySelector(".preview-image");
+previewImage.style.height = "75%";
 let closeImagePopupWindowButton = document.querySelector(".image-popup-window .close-button");
 let downloadButton = document.querySelector(".download-button");
 let nextButton = document.querySelector(".image-popup-window .control-next");
@@ -69,7 +70,7 @@ function appendImageToGallery(response){
     allImages = response;
     // console.log(response);
     response.forEach(function(e, currentIndex){
-        console.log(e);
+        // console.log(e);
         const gallery = document.querySelector(".gallery");
         const imageContainer = document.createElement('img');
         const imageUrl = e.urls.regular;
@@ -77,16 +78,19 @@ function appendImageToGallery(response){
         imageContainer.loading = "lazy";
         imageContainer.className = "gallery-image";
         gallery.appendChild(imageContainer);  
-
+        
         
         imageContainer.addEventListener("click", function(){
+            if(e.height > e.width){
+            previewImage.style.height = "75%";
+            }    
+            else if(e.width > e.height){
+                previewImage.style.height = "70%";
+            }
+            else if(e.width === e.height){
+                previewImage.style.height = "70%";
+            }
 
-            // if(e.height > e.width){
-            //     previewImage.style.height = "80%";
-            // }    
-            // else{
-            //     previewImage.style.height = "50%";
-            // }
 
             //defaults
             imageLocation.style.display = "flex";
@@ -123,7 +127,7 @@ function appendImageToGallery(response){
                 imageDescriptionText.innerHTML = e.alt_description;
             }
             else{
-                imageDescription.style.display = none;
+                imageDescription.style.display = "none";
             }
 
             if(e.exif.name!=null){
@@ -164,6 +168,16 @@ nextButton.addEventListener("click", function(){
     if(index < allImages.length - 1){
         previewImage.src = allImages[index + 1].urls.regular;
         downloadButton.href = allImages[index + 1].links.html;
+
+        if(allImages[index + 1].height > allImages[index + 1].width){
+            previewImage.style.height = "75%";
+        }    
+        else if(allImages[index + 1].width > allImages[index + 1].height){
+            previewImage.style.height = "70%";
+        }
+        else if(allImages[index + 1].width === allImages[index + 1].height){
+            previewImage.style.height = "70%";
+        }
 
         imageLocation.style.display = "flex";
         imageCamera.style.display = "flex";
@@ -206,13 +220,6 @@ nextButton.addEventListener("click", function(){
             imageCamera.style.display = "none";
         }
 
-        // if(allImages[index + 1].height > allImages[index + 1].width){
-        //     previewImage.style.height = "75%";
-        // }    
-        // else{
-        //     previewImage.style.height = "50%";
-        // }
-
         index++;
     }
 });
@@ -222,12 +229,15 @@ previousButton.addEventListener("click", function(){
         previewImage.src = allImages[index - 1].urls.regular;
         downloadButton.href = allImages[index - 1].links.html;
 
-        // if(allImages[index + 1].height > allImages[index + 1].width){
-        //     previewImage.style.height = "80%";
-        // }    
-        // else{
-        //     previewImage.style.height = "50%";
-        // }
+        if(allImages[index - 1].height > allImages[index - 1].width){
+            previewImage.style.height = "75%";
+        }    
+        else if(allImages[index - 1].width > allImages[index - 1].height){
+            previewImage.style.height = "70%";
+        }
+        else if(allImages[index - 1].width === allImages[index - 1].height){
+            previewImage.style.height = "70%";
+        }
 
         imageLocation.style.display = "flex";
         imageCamera.style.display = "flex";

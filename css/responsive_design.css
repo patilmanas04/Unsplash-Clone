@@ -187,13 +187,13 @@
         fill: white;
     }
 
-    main .image-popup-window .preview-image{
+    /* main .image-popup-window .preview-image{
         height: auto !important; 
         width: 90%;
         border-radius: 0px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         border: 1px solid white;
-    }
+    } */
 
     main .image-popup-window .download-button{
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -213,7 +213,7 @@
 }
 
 
-@media screen and (max-width:1027px){
+/* @media screen and (max-width:1027px){
     main .image-popup-window{
         height: 90vh;
         width: 90%;
@@ -222,11 +222,12 @@
     main .image-popup-window .preview-image{
         height: 70%;
     }
-}
+} */
 
 @media screen and (max-width:594px){
     main .image-popup-window{
-        height: 100vh;
+        max-height: 100vh;
+        min-height: 450px;
         width: 100%;
         border-radius: 0px;
     }
@@ -260,14 +261,14 @@
     }
 }
 
-@media screen and (max-width:814px){
+/* @media screen and (max-width:814px){
     main .image-popup-window .preview-image{
         height: 55%;
     }
-}
+} */
 
 
-@media screen and (max-width:642px){
+/* @media screen and (max-width:642px){
     main .image-popup-window .preview-image{
         height: 45%;
     }
@@ -277,4 +278,4 @@
     main .image-popup-window .preview-image{
         height: 35%;
     }
-}
+} */
