@@ -38,7 +38,7 @@ The Unsplash Clone web application is built using the following technologies:
 
 * **Unsplash API**: The Unsplash Clone integrates the Unsplash API to fetch high-quality images from the Unsplash platform. By utilizing the API, the application is able to search for images, retrieve their metadata, and display them to the user.
 
-These technologies work together to create a responsive and interactive web application that provides a user-friendly interface for browsing and exploring a vast collection of images from Unsplash.
+I am continuously working to improve the functionality and performance of the Unsplash Clone. The project is a work in progress, and I am constantly exploring new ways to enhance its features and capabilities.
 
 ## Installation
 
