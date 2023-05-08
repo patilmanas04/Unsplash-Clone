@@ -58,6 +58,10 @@ To use the Unsplash API, you need to obtain an access key. Follow these steps to
 2. Create a new application and obtain an access key.
 3. In the js files, replace the access key with your actual access key.
 
+## API Rate Limit
+
+Please note that the Unsplash API used in this project has a rate limit of 50 requests per hour. If you encounter any issues fetching images or receive error responses, it might be due to exceeding the rate limit. In such cases, please wait for the rate limit to reset before making additional requests.
+
 ## Contributing
 
 Contributions are always welcome! If you'd like to contribute to this project, please follow these steps:
