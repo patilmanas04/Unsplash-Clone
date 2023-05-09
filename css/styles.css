@@ -420,6 +420,18 @@ main .image-popup-window{
     scrollbar-width: none;
 }
 
+main .image-popup-window .preview-image{
+    height: 80%;
+    width: auto;
+    max-width: 75%;
+    border-radius: 4px;
+    object-fit: cover;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+
 main .image-popup-window .image-information{
     position: absolute;
     z-index: 100;
@@ -433,11 +445,13 @@ main .image-popup-window .image-information{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    box-sizing: border-box;
 }
 
 main .image-popup-window .image-information .information-values{
     display: flex;
     gap: 70px;
+    /* flex-wrap: wrap; */
 }
 
 main .image-popup-window .image-information .information-values .information-tab{
@@ -480,8 +494,9 @@ main .image-popup-window .image-information .other-informations .information-tab
 
 main .image-popup-window .slider-animation{
     width: 100px;
-    height: 1px;
-    background: blue;
+    height: 3px;
+    /* background: blue; */
+    background: #767676;
     position: absolute;
     z-index: 101;
     bottom: 10px;
@@ -536,19 +551,6 @@ main .image-popup-window .download-button{
     top: 15px;
     right: 15px;
     color: white;
-}
-
-main .image-popup-window .preview-image{
-    /* height: 80%;
-    width: auto;
-    max-width: 80%; */
-    height: inherit;
-    border-radius: 0px;
-    object-fit: cover;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 main .image-popup-window .image-nav-control{

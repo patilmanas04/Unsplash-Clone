@@ -45,13 +45,14 @@ galleryImageAJAXCall.addEventListener("load", function(e){
 let imagePopupWindow = document.querySelector(".image-popup-window");
 let fadedBackground = document.querySelector(".faded-background");
 let previewImage = document.querySelector(".preview-image");
-previewImage.style.height = "75%";
 let closeImagePopupWindowButton = document.querySelector(".image-popup-window .close-button");
 let downloadButton = document.querySelector(".download-button");
 let nextButton = document.querySelector(".image-popup-window .control-next");
 let previousButton = document.querySelector(".image-popup-window .control-previous");
 let index = 0;
 let allImages = "";
+let imageClientWidth = "";
+let imageClientHeight = "";
 
 // values related to each image
 let imageLocation = document.querySelector(".image-information .other-informations .location");
@@ -80,18 +81,7 @@ function appendImageToGallery(response){
         gallery.appendChild(imageContainer);  
         
         
-        imageContainer.addEventListener("click", function(){
-            if(e.height > e.width){
-            previewImage.style.height = "75%";
-            }    
-            else if(e.width > e.height){
-                previewImage.style.height = "70%";
-            }
-            else if(e.width === e.height){
-                previewImage.style.height = "70%";
-            }
-
-
+        imageContainer.addEventListener("click", function(){   
             //defaults
             imageLocation.style.display = "flex";
             imageCamera.style.display = "flex";
@@ -169,15 +159,15 @@ nextButton.addEventListener("click", function(){
         previewImage.src = allImages[index + 1].urls.regular;
         downloadButton.href = allImages[index + 1].links.html;
 
-        if(allImages[index + 1].height > allImages[index + 1].width){
-            previewImage.style.height = "75%";
-        }    
-        else if(allImages[index + 1].width > allImages[index + 1].height){
-            previewImage.style.height = "70%";
-        }
-        else if(allImages[index + 1].width === allImages[index + 1].height){
-            previewImage.style.height = "70%";
-        }
+        // if(allImages[index + 1].height > allImages[index + 1].width){
+        //     previewImage.style.height = "75%";
+        // }    
+        // else if(allImages[index + 1].width > allImages[index + 1].height){
+        //     previewImage.style.height = "70%";
+        // }
+        // else if(allImages[index + 1].width === allImages[index + 1].height){
+        //     previewImage.style.height = "70%";
+        // }
 
         imageLocation.style.display = "flex";
         imageCamera.style.display = "flex";
@@ -210,7 +200,7 @@ nextButton.addEventListener("click", function(){
             imageDescriptionText.innerHTML = allImages[index + 1].alt_description;
         }
         else{
-            imageDescription.style.display = none;
+            imageDescription.style.display = "none";
         }
 
         if(allImages[index + 1].exif.name!=null){
@@ -229,15 +219,15 @@ previousButton.addEventListener("click", function(){
         previewImage.src = allImages[index - 1].urls.regular;
         downloadButton.href = allImages[index - 1].links.html;
 
-        if(allImages[index - 1].height > allImages[index - 1].width){
-            previewImage.style.height = "75%";
-        }    
-        else if(allImages[index - 1].width > allImages[index - 1].height){
-            previewImage.style.height = "70%";
-        }
-        else if(allImages[index - 1].width === allImages[index - 1].height){
-            previewImage.style.height = "70%";
-        }
+        // if(allImages[index - 1].height > allImages[index - 1].width){
+        //     previewImage.style.height = "75%";
+        // }    
+        // else if(allImages[index - 1].width > allImages[index - 1].height){
+        //     previewImage.style.height = "70%";
+        // }
+        // else if(allImages[index - 1].width === allImages[index - 1].height){
+        //     previewImage.style.height = "70%";
+        // }
 
         imageLocation.style.display = "flex";
         imageCamera.style.display = "flex";
@@ -270,7 +260,7 @@ previousButton.addEventListener("click", function(){
             imageDescriptionText.innerHTML = allImages[index - 1].alt_description;
         }
         else{
-            imageDescription.style.display = none;
+            imageDescription.style.display = "none";
         }
 
         if(allImages[index - 1].exif.name!=null){
@@ -284,7 +274,17 @@ previousButton.addEventListener("click", function(){
     }
 });
 
+// window.addEventListener("resize", ()=>{
+//     console.log("window resized");
+//     console.log(`Image popup window width: ${imagePopupWindow.clientWidth}`);
+//     console.log(`Preview image width: ${previewImage.clientWidth}`);
 
+//     if(previewImage.clientWidth < (80/100)*(imagePopupWindow.clientWidth)){
+//         previewImage.style.width = "80%";
+//         previewImage.style.height = "auto";
+//         console.log("The condition is True");
+//     }
+// });
 
 
 
