@@ -16,6 +16,7 @@ editorialImageAJAXCall.send();
 editorialImageAJAXCall.addEventListener("load", function (e){
     let response = JSON.parse(e.target.response);
     addImageToDOM(response);
+    console.log(response)
 });
 
 function addImageToDOM(response){
